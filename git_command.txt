@@ -1,0 +1,36 @@
+///////////////////////////////////
+/*  Auther:FunnySeaman           */
+/*  Created at:2016/07/09        */
+/*  Last modified at:2016/07/11  */
+///////////////////////////////////
+
+Git is a distributed version control system.
+Git is free software.
+
+git init									//设置当前文件夹为仓库
+git add 文件名.扩展名						//添加文件
+git commit -m "描述"						//确认提交
+git status									//用来查看仓库状态
+git diff									//查看更改内容
+git log [--pretty=oneline]					//查看历史提交记录
+git reflog									//查看历史命令记录
+git reset --hard [HEAD~1]|[提交ID]			//返回版本
+git checkout -- 文件名.扩展名				//用版本库文件恢复工作区文件
+git rm 文件名.扩展名						//删除版本库中的文件
+git clone 地址								//克隆GitHub上项目
+git checkout -b 分支名 [origin/分支名]		//[根据远程库分支]创建并切换分支
+	该命令相当于$ git branch 分支名			//创建分支
+				$ git checkout 分支名		//切换分支
+git branch									//显示当前所有分支
+git branch -d 分支名						//删除分支
+git branch --set-upstream origin/分支 分支 	//指定本地分支和远程分支的链接
+git merge 分支名							//合并指定分支到当前分支
+git merge --no-ff -m "合并说明" 新分支名	//非fast forward合并，保留合并记录
+git stash									//保存工作现场
+git stash list								//查看保存的工作现场
+git stash apply	名							//恢复工作现场，不删除
+git stash pop								//恢复工作现场，删除
+例如在dev分支中工作时，需要紧急修改master分支中bug，git stash保存工作现场，git checkout master切换至master分支，修改bug，git add ... git commit ...添加并提交，git checkout dev切换至原先的工作分支，git merge master合并已修复的bug，git stash pop恢复现场.
+git remote [-v]								//查看远程库[详细]信息
+git push origin 分支名						//推送分支
+git pull									//抓取最新的提交
